@@ -4,19 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Tarefas</title>
-
     <link rel="stylesheet" href="css/estilo.css" />
-    <script src="js/app.js" defer></script>
+    <script src="js/index.js" defer></script>
   </head>
   <body>
     <div class="app-container">
       <header class="cabecalho">
         <h1>Minhas Tarefas</h1>
         <button id="btn-tema" type="button" aria-label="Alternar Tema">
-          🌓 Tema
+          Tema
         </button>
       </header>
-
       <main>
         <form id="form-tarefa" novalidate>
           <div class="campo-grupo">
@@ -29,7 +27,7 @@
               maxlength="60"
               autocomplete="off"
             />
-            <select id="select-prioridade">
+            <select id="select-prioridade" aria-label="Prioridade da tarefa">
               <option value="baixa">Baixa</option>
               <option value="media" selected>Média</option>
               <option value="alta">Alta</option>
