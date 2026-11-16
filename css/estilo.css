@@ -6,7 +6,6 @@
   --cor-borda: #e2e8f0;
   --cor-primaria: #3182ce;
   --cor-erro: #e53e3e;
-
   --cor-alta: #e53e3e;
   --cor-media: #dd6b20;
   --cor-baixa: #38a169;
@@ -26,15 +25,10 @@ body.tema-escuro {
 }
 
 body {
-  font-family:
-    system-ui,
-    -apple-system,
-    sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
-  transition:
-    background-color 0.25s,
-    color 0.25s;
+  transition: background-color 0.25s, color 0.25s;
   padding: 2rem 1rem;
   display: flex;
   justify-content: center;
@@ -105,6 +99,12 @@ button:hover {
   justify-content: space-between;
   margin: 1.5rem 0;
   gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filtros {
+  display: flex;
+  gap: 0.25rem;
 }
 
 .btn-filtro {
@@ -135,18 +135,18 @@ button:hover {
   border: 1px solid var(--cor-borda);
   border-left: 5px solid transparent;
   border-radius: 4px;
-  transition:
-    transform 0.2s,
-    opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
 }
 
 /* ETAPA 5: Seleção CSS por atributo data-* */
 .tarefa[data-prioridade="alta"] {
   border-left-color: var(--cor-alta);
 }
+
 .tarefa[data-prioridade="media"] {
   border-left-color: var(--cor-media);
 }
+
 .tarefa[data-prioridade="baixa"] {
   border-left-color: var(--cor-baixa);
 }
