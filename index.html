@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Tarefas</title>
+
+    <link rel="stylesheet" href="css/estilo.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="cabecalho">
+        <h1>Minhas Tarefas</h1>
+        <button id="btn-tema" type="button" aria-label="Alternar Tema">
+          🌓 Tema
+        </button>
+      </header>
+
+      <main>
+        <form id="form-tarefa" novalidate>
+          <div class="campo-grupo">
+            <input
+              type="text"
+              id="input-tarefa"
+              placeholder="Digite sua tarefa..."
+              required
+              minlength="3"
+              maxlength="60"
+              autocomplete="off"
+            />
+            <select id="select-prioridade">
+              <option value="baixa">Baixa</option>
+              <option value="media" selected>Média</option>
+              <option value="alta">Alta</option>
+            </select>
+            <button type="submit">Adicionar</button>
+          </div>
+          <div
+            id="mensagem-erro"
+            class="mensagem-erro oculto"
+            role="alert"
+          ></div>
+        </form>
+
+        <section class="controles">
+          <div class="filtros">
+            <button type="button" class="btn-filtro ativo" data-filtro="todas">
+              Todas
+            </button>
+            <button type="button" class="btn-filtro" data-filtro="pendentes">
+              Pendentes
+            </button>
+            <button type="button" class="btn-filtro" data-filtro="concluidas">
+              Concluídas
+            </button>
+          </div>
+          <button type="button" id="btn-limpar-concluidas">
+            Limpar Concluídas
+          </button>
+        </section>
+
+        <ul class="lista-tarefas" aria-label="Lista de tarefas"></ul>
+      </main>
+    </div>
+
+    <template id="tpl-tarefa">
+      <li class="tarefa" data-prioridade="media">
+        <input
+          type="checkbox"
+          class="tarefa__check"
+          aria-label="Marcar como concluída"
+        />
+        <span class="tarefa__texto"></span>
+        <button
+          type="button"
+          class="tarefa__remover"
+          aria-label="Remover tarefa"
+        >
+          &times;
+        </button>
+      </li>
+    </template>
+  </body>
+</html>
